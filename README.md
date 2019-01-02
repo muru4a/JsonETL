@@ -27,6 +27,22 @@ The following modules:
 
 Executing Procedure:
 
+      export SPARK_HOME=/var/groupon/spark-2.4.0
+      ${SPARK_HOME}/bin/spark-submit \
+        --master yarn \
+        --deploy-mode client \
+        --driver-memory=1G \
+        --executor-cores=1 \
+        --executor-memory=1G \
+        --conf spark.sql.shuffle.partitions=300 \
+        --conf spark.sql.autoBroadcastJoinThreshold=78643200 \
+        --conf spark.yarn.executor.memoryOverhead=2048 \
+        --conf spark.dynamicAllocation.enabled=true \
+        --class com.etl.driver.JsonETLDriver /path/to/transform-spec.json /path/to/dataset.csv /path/to/output.csv
+
+
+
+
 
 
 
