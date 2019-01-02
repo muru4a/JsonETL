@@ -38,7 +38,7 @@ Executing Procedure:
         --conf spark.sql.autoBroadcastJoinThreshold=78643200 \
         --conf spark.yarn.executor.memoryOverhead=2048 \
         --conf spark.dynamicAllocation.enabled=true \
-        --class com.etl.driver.JsonETLDriver /path/to/transform-spec.json /path/to/dataset.csv /path/to/output.csv
+        --class com.etl.driver.JsonETLDriver /path/JsonETL.jar /path/to/transform-spec.json /path/to/dataset.csv /path/to/output.csv
 
 
 
